@@ -113,8 +113,8 @@ D:\Projects\Unity-Mod-Manager-Mod\Chinese-Parents\Chinese-Parents-Event-Control-
 D:\Projects\Unity-Mod-Manager-Mod\Chinese-Parents\Chinese-Parents-Event-Control-Lib\Event-Control-Lib-Sources\bin\Debug\UnityEngine.UnityWebRequestWWWModule.xml
 D:\Projects\Unity-Mod-Manager-Mod\Chinese-Parents\Chinese-Parents-Event-Control-Lib\Event-Control-Lib-Sources\bin\Debug\UnityEngine.VideoModule.xml
 D:\Projects\Unity-Mod-Manager-Mod\Chinese-Parents\Chinese-Parents-Event-Control-Lib\Event-Control-Lib-Sources\bin\Debug\UnityEngine.WindModule.xml
-D:\Projects\Unity-Mod-Manager-Mod\Chinese-Parents\Chinese-Parents-Event-Control-Lib\Event-Control-Lib-Sources\obj\Debug\Event-Control-Lib.csprojAssemblyReference.cache
 D:\Projects\Unity-Mod-Manager-Mod\Chinese-Parents\Chinese-Parents-Event-Control-Lib\Event-Control-Lib-Sources\obj\Debug\Event-Control-Lib.csproj.CoreCompileInputs.cache
 D:\Projects\Unity-Mod-Manager-Mod\Chinese-Parents\Chinese-Parents-Event-Control-Lib\Event-Control-Lib-Sources\obj\Debug\Event-Control-Lib.csproj.CopyComplete
 D:\Projects\Unity-Mod-Manager-Mod\Chinese-Parents\Chinese-Parents-Event-Control-Lib\Event-Control-Lib-Sources\obj\Debug\Event-Control-Lib.dll
 D:\Projects\Unity-Mod-Manager-Mod\Chinese-Parents\Chinese-Parents-Event-Control-Lib\Event-Control-Lib-Sources\obj\Debug\Event-Control-Lib.pdb
+D:\Projects\Unity-Mod-Manager-Mod\Chinese-Parents\Chinese-Parents-Event-Control-Lib\Event-Control-Lib-Sources\obj\Debug\Event-Control-Lib.csprojAssemblyReference.cache
