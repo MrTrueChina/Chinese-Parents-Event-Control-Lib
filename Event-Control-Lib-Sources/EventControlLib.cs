@@ -184,7 +184,7 @@ namespace MtC.Mod.ChineseParents.EventControlLib
     }
 
     /// <summary>
-    /// 疑似是选班委事件
+    /// 添加选班委事件的方法
     /// </summary>
     [HarmonyPatch(typeof(action_manager), "add_button_candidate")]
     public static class action_manager_add_button_candidate
@@ -197,18 +197,44 @@ namespace MtC.Mod.ChineseParents.EventControlLib
                 return;
             }
 
-            Main.ModEntry.Logger.Log("action_manager.add_button_candidate 方法调用完毕");
+            Main.ModEntry.Logger.Log("添加选班委事件的方法调用完毕");
 
             // 如果开启了设置则在游戏内提示
             if (Main.settings.showCreateEventTip)
             {
-                TipsManager.instance.AddTips("action_manager.add_button_candidate 方法调用完毕", 1);
+                TipsManager.instance.AddTips("添加选班委事件的方法调用完毕", 1);
+            }
+        }
+    }
+
+    /// <summary>
+    /// 添加选择职业事件的方法
+    /// </summary>
+    [HarmonyPatch(typeof(action_manager), "add_button_career")]
+    public static class action_manager_add_button_career
+    {
+        private static void Postfix()
+        {
+            // 如果 Mod 未启动则直接按照游戏原本的逻辑进行调用
+            if (!Main.enabled)
+            {
+                return;
+            }
+
+            Main.ModEntry.Logger.Log("添加选择职业事件的方法调用完毕");
+
+            // 如果开启了设置则在游戏内提示
+            if (Main.settings.showCreateEventTip)
+            {
+                TipsManager.instance.AddTips("添加选择职业事件的方法调用完毕", 1);
             }
         }
     }
 
     /// <summary>
     /// 翻译过来是“喜剧”“幽默的剧情”
+    /// 儿子版第一次测试发现，是好感度剧情？
+    /// 儿子版第二次测试发现，学习技能后的事件也是这里添加的
     /// </summary>
     [HarmonyPatch(typeof(action_manager), "add_button_comedy")]
     public static class action_manager_add_button_comedy
@@ -297,24 +323,6 @@ namespace MtC.Mod.ChineseParents.EventControlLib
             }
 
             // 这个 facefight_id 在方法里立刻就被拿去随机查另一个 id 了，暂时看不到输出的价值
-        }
-    }
-
-    /// <summary>
-    /// <see cref="XmlData"/> 的扩展方法类
-    /// </summary>
-    public static class XmlDataExtension
-    {
-        /// <summary>
-        /// 输出所有内容到 Log
-        /// </summary>
-        /// <param name="data"></param>
-        public static void Log(this XmlData data)
-        {
-            foreach(KeyValuePair<string,string> pair in data.value)
-            {
-                Main.ModEntry.Logger.Log("key = " + pair.Key + ", value = " + pair.Value);
-            }
         }
     }
 
@@ -434,7 +442,7 @@ namespace MtC.Mod.ChineseParents.EventControlLib
     }
 
     /// <summary>
-    /// 疑似是添加某类包含问答的事件的方法，可能是抉择
+    /// 添加抉择事件的方法
     /// </summary>
     [HarmonyPatch(typeof(action_manager), "add_button_question")]
     public static class action_manager_add_button_question
@@ -447,12 +455,12 @@ namespace MtC.Mod.ChineseParents.EventControlLib
                 return;
             }
 
-            Main.ModEntry.Logger.Log("action_manager.add_button_question 调用完毕，type = " + type);
+            Main.ModEntry.Logger.Log("添加抉择事件的方法调用完毕，type = " + type);
 
             // 如果开启了设置则在游戏内提示
             if (Main.settings.showCreateEventTip)
             {
-                TipsManager.instance.AddTips("action_manager.add_button_question 调用完毕，type = " + type, 1);
+                TipsManager.instance.AddTips("添加抉择事件的方法调用完毕，type = " + type, 1);
             }
 
             // 这个 type 被用在两个连续的随机数中，基本上看不到输出的价值了
@@ -511,34 +519,52 @@ namespace MtC.Mod.ChineseParents.EventControlLib
         }
     }
 
-    ////////--------////////--------//////// 测试代码 ////////--------////////--------////////
-
     /// <summary>
-    /// 疑似是进入下一回合的方法
+    /// <see cref="XmlData"/> 的扩展方法类
     /// </summary>
-    [HarmonyPatch(typeof(NextRound), "nextRound")]
-    public static class NextRound_nextRound
+    public static class XmlDataExtension
     {
-        private static void Prefix(NextRound __instance, keyValueUpdate kv)
+        /// <summary>
+        /// 输出所有内容到 Log
+        /// </summary>
+        /// <param name="data"></param>
+        public static void Log(this XmlData data)
         {
-            // 如果 Mod 未启动则直接按照游戏原本的逻辑进行调用
-            if (!Main.enabled)
+            foreach (KeyValuePair<string, string> pair in data.value)
             {
-                return;
-            }
-
-            Main.ModEntry.Logger.Log("NextRound.nextRound 即将调用");
-
-            if (kv != null)
-            {
-                Main.ModEntry.Logger.Log("key = " + kv.Key + ", value = " + kv.Values);
-            }
-            else
-            {
-                Main.ModEntry.Logger.Log("kv = null");
+                Main.ModEntry.Logger.Log("key = " + pair.Key + ", value = " + pair.Value);
             }
         }
     }
+
+    ////////--------////////--------//////// 测试代码 ////////--------////////--------////////
+
+    ///// <summary>
+    ///// 疑似是进入下一回合的方法
+    ///// </summary>
+    //[HarmonyPatch(typeof(NextRound), "nextRound")]
+    //public static class NextRound_nextRound
+    //{
+    //    private static void Prefix(NextRound __instance, keyValueUpdate kv)
+    //    {
+    //        // 如果 Mod 未启动则直接按照游戏原本的逻辑进行调用
+    //        if (!Main.enabled)
+    //        {
+    //            return;
+    //        }
+
+    //        Main.ModEntry.Logger.Log("NextRound.nextRound 即将调用");
+
+    //        if (kv != null)
+    //        {
+    //            Main.ModEntry.Logger.Log("key = " + kv.Key + ", value = " + kv.Values);
+    //        }
+    //        else
+    //        {
+    //            Main.ModEntry.Logger.Log("kv = null");
+    //        }
+    //    }
+    //}
 
     ///// <summary>
     ///// 疑似是安排确认执行方法
