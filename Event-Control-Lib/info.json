@@ -1,0 +1,8 @@
+{
+    "Id": "MtC.Mod.ChineseParents.EventControlLib",
+    "DisplayName": "事件控制前置 - Event Control Lib",
+    "Author": "Mr.true.China",
+    "Version": "1.0.0",
+    "AssemblyName": "Event-Control-Lib.dll",
+    "EntryMethod": "MtC.Mod.ChineseParents.EventControlLib.Main.Load"
+}
