@@ -72,7 +72,7 @@ namespace MtC.Mod.ChineseParents.EventControlLib
         /// </summary>
         /// <param name="condition">符合这个条件的仅进行对话事件将会被移除</param>
         /// <param name="after">这个事件成功移除后执行的方法</param>
-        public static ChatEventControlParam BlockBoyLovingEvent(Func<int, bool> condition, Action<int> after)
+        public static ChatEventControlParam BlockChatEvent(Func<int, bool> condition, Action<int> after)
         {
             ChatEventControlParam param = new ChatEventControlParam(0, condition, after);
 
@@ -85,7 +85,7 @@ namespace MtC.Mod.ChineseParents.EventControlLib
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public static bool RemoveBlockBoyLovingEvent(ChatEventControlParam param)
+        public static bool RemoveBlockChatEvent(ChatEventControlParam param)
         {
             return blockChatEvents.Remove(param);
         }
