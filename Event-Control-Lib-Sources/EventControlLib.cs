@@ -93,13 +93,8 @@ namespace MtC.Mod.ChineseParents.EventControlLib
         }
     }
 
-    public static partial class EventControlLib
+    public static partial class EventControl
     {
-        public static void AddBlock() { }
-        public static void AddEvent() { }
-        public static void RemoveBlock() { }
-        public static void RemoveEvent() { }
-
         /// <summary>
         /// 移除事件列表中最后一个事件，也就是最新添加的事件
         /// </summary>

@@ -7,12 +7,12 @@ using UnityEngine;
 
 namespace MtC.Mod.ChineseParents.EventControlLib
 {
-    public static partial class EventControlLib
+    public static partial class EventControl
     {
         /// <summary>
         /// 添加或移除周年纪念日事件使用的参数
         /// </summary>
-        internal class AnniversaryEventControlParam
+        public class AnniversaryEventControlParam
         {
             /// <summary>
             /// 对话 id，这个参数只在添加时使用
@@ -50,18 +50,45 @@ namespace MtC.Mod.ChineseParents.EventControlLib
         /// <param name="id">这个周年纪念日事件的对话的 id</param>
         /// <param name="condition">符合这个条件则添加</param>
         /// <param name="after">这个事件成功添加后执行的方法</param>
-        public static void AddAnniversaryEvent(int id, Func<int, bool> condition, Action<int> after)
+        /// <returns></returns>
+        public static AnniversaryEventControlParam AddAnniversaryEvent(int id, Func<int, bool> condition, Action<int> after)
         {
-            addAnniversaryEvents.Add(new AnniversaryEventControlParam(id, condition, after));
+            AnniversaryEventControlParam param = new AnniversaryEventControlParam(id, condition, after);
+
+            addAnniversaryEvents.Add(param);
+
+            return param;
         }
         /// <summary>
-        /// 移除周年纪念日事件
+        /// 取消添加周年纪念事件
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        public static bool RemoveAddAnniversaryEvent(AnniversaryEventControlParam param)
+        {
+            return addAnniversaryEvents.Remove(param);
+        }
+        /// <summary>
+        /// 阻断周年纪念日事件
         /// </summary>
         /// <param name="condition">符合这个条件的周年纪念日将会被移除</param>
         /// <param name="after">这个事件成功移除后执行的方法</param>
-        public static void RemoveAnniversaryEvent(Func<int, bool> condition, Action<int> after)
+        public static AnniversaryEventControlParam BlockAnniversaryEvent(Func<int, bool> condition, Action<int> after)
         {
-            blockAnniversaryEvents.Add(new AnniversaryEventControlParam(0, condition, after));
+            AnniversaryEventControlParam param = new AnniversaryEventControlParam(0, condition, after);
+
+            blockAnniversaryEvents.Add(param);
+
+            return param;
+        }
+        /// <summary>
+        /// 取消阻断周年纪念日事件
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        public static bool RemoveBlockAnniversaryEvent(AnniversaryEventControlParam param)
+        {
+            return blockAnniversaryEvents.Remove(param);
         }
     }
 
@@ -88,7 +115,7 @@ namespace MtC.Mod.ChineseParents.EventControlLib
             }
 
             // 遍历阻断条件，如果符合条件则移除事件
-            EventControlLib.blockAnniversaryEvents.ForEach(blockEvent => 
+            EventControl.blockAnniversaryEvents.ForEach(blockEvent => 
             {
                 // 记录是否已经移除，因为无论有多少个移除实际上都是指向同一个目标，只能移除一次
                 bool isRemoved = false;
@@ -99,7 +126,7 @@ namespace MtC.Mod.ChineseParents.EventControlLib
                     if (!isRemoved)
                     {
                         // 移除最后一个事件
-                        EventControlLib.RemoveLastEvent();
+                        EventControl.RemoveLastEvent();
 
                         isRemoved = true;
                     }
@@ -128,7 +155,7 @@ namespace MtC.Mod.ChineseParents.EventControlLib
             Main.ModEntry.Logger.Log("调用添加周年纪念日事件方法的方法调用完毕，skillId = " + skillId);
 
             // 遍历新增条件，添加其中所有符合条件的事件
-            EventControlLib.addAnniversaryEvents.ForEach(addEvent => 
+            EventControl.addAnniversaryEvents.ForEach(addEvent => 
             {
                 if (addEvent.condition.Invoke(addEvent.id))
                 {

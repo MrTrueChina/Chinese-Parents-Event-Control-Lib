@@ -69,11 +69,13 @@
     <Compile Include="Events\BoyLovingEvent.cs" />
     <Compile Include="EventControlLib.cs" />
     <Compile Include="Events\CandidateEvent.cs" />
+    <Compile Include="Events\ChatEvent.cs" />
     <Compile Include="Events\ChoiceEvent.cs" />
     <Compile Include="Events\ChooseCareerEvent.cs" />
     <Compile Include="Events\CompositionEvent.cs" />
     <Compile Include="Events\DraftEvent.cs" />
     <Compile Include="Events\FaceFightEvent.cs" />
+    <Compile Include="Events\MessageEvent.cs" />
     <Compile Include="Events\NameEvent.cs" />
     <Compile Include="Events\ParentCareerTaskEvent.cs" />
     <Compile Include="Events\RedFlowerEvent.cs" />

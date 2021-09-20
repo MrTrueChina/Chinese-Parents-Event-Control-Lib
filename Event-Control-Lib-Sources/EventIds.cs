@@ -65,6 +65,16 @@ namespace MtC.Mod.ChineseParents.EventControlLib
                 /// </summary>
                 public const int TRANSFER = 7000005;
             }
+            /// <summary>
+            /// 闺蜜-萌萌事件
+            /// </summary>
+            public static class MengMeng
+            {
+                /// <summary>
+                /// 闺蜜长时间不陪伴事件
+                /// </summary>
+                public const int NO_COMPANY = 8200101;
+            }
         }
     }
 }
