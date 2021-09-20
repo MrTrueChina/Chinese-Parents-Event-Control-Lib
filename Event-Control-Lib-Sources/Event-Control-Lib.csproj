@@ -7,7 +7,7 @@
     <ProjectGuid>{BFF1654F-0498-4B7D-B72C-2DA7BEFAB219}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Event_Control_Lib</RootNamespace>
+    <RootNamespace>MtC.Mod.ChineseParents.EventControlLib</RootNamespace>
     <AssemblyName>Event-Control-Lib</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -64,9 +64,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnniversaryEvent.cs" />
+    <Compile Include="EventIds.cs" />
+    <Compile Include="Events\AnniversaryEvent.cs" />
+    <Compile Include="Events\BoyLovingEvent.cs" />
     <Compile Include="EventControlLib.cs" />
+    <Compile Include="Events\CandidateEvent.cs" />
+    <Compile Include="Events\ChoiceEvent.cs" />
+    <Compile Include="Events\ChooseCareerEvent.cs" />
+    <Compile Include="Events\CompositionEvent.cs" />
+    <Compile Include="Events\DraftEvent.cs" />
+    <Compile Include="Events\FaceFightEvent.cs" />
+    <Compile Include="Events\NameEvent.cs" />
+    <Compile Include="Events\ParentCareerTaskEvent.cs" />
+    <Compile Include="Events\RedFlowerEvent.cs" />
+    <Compile Include="Events\RedPacketEvent.cs" />
+    <Compile Include="Events\ScoreEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmlDataExtension.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
