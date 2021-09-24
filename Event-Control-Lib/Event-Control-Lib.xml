@@ -1,0 +1,381 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Event-Control-Lib</name>
+    </assembly>
+    <members>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.EventIds">
+            <summary>
+            确认的事件 ID 列表，不完全，不保证更新
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.EventIds.Loving">
+            <summary>
+            恋爱相关事件
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.EventIds.Loving.WangShegnNan">
+            <summary>
+            王胜男事件
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventIds.Loving.WangShegnNan.TRANSFER">
+            <summary>
+            转学事件
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.EventIds.Loving.LiRuoFang">
+            <summary>
+            李若放事件
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventIds.Loving.LiRuoFang.TRANSFER">
+            <summary>
+            转学事件
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.EventIds.Loving.TangJinNa">
+            <summary>
+            汤金娜事件
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventIds.Loving.TangJinNa.TRANSFER">
+            <summary>
+            转学事件
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.EventIds.Loving.SuFangYun">
+            <summary>
+            苏芳允事件
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventIds.Loving.SuFangYun.TRANSFER">
+            <summary>
+            转学事件
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.EventIds.Loving.MuWei">
+            <summary>
+            牧唯事件
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventIds.Loving.MuWei.TRANSFER">
+            <summary>
+            转学事件
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.EventIds.Loving.MengMeng">
+            <summary>
+            闺蜜-萌萌事件
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventIds.Loving.MengMeng.NO_COMPANY">
+            <summary>
+            闺蜜长时间不陪伴事件
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.EventControl.AnniversaryEventControlParam">
+            <summary>
+            添加或移除周年纪念日事件使用的参数
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventControl.AnniversaryEventControlParam.id">
+            <summary>
+            对话 id，这个参数只在添加时使用
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventControl.AnniversaryEventControlParam.condition">
+            <summary>
+            条件
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventControl.AnniversaryEventControlParam.after">
+            <summary>
+            成功添加或移除事件后调用的方法
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventControl.addAnniversaryEvents">
+            <summary>
+            添加的周年纪念日事件列表
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventControl.blockAnniversaryEvents">
+            <summary>
+            阻断的周年纪念日事件列表
+            </summary>
+        </member>
+        <member name="M:MtC.Mod.ChineseParents.EventControlLib.EventControl.AddAnniversaryEvent(System.Int32,System.Func{System.Int32,System.Boolean},System.Action{System.Int32})">
+            <summary>
+            添加周年纪念日事件
+            </summary>
+            <param name="id">这个周年纪念日事件的对话的 id</param>
+            <param name="condition">符合这个条件则添加</param>
+            <param name="after">这个事件成功添加后执行的方法</param>
+            <returns></returns>
+        </member>
+        <member name="M:MtC.Mod.ChineseParents.EventControlLib.EventControl.RemoveAddAnniversaryEvent(MtC.Mod.ChineseParents.EventControlLib.EventControl.AnniversaryEventControlParam)">
+            <summary>
+            取消添加周年纪念事件
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MtC.Mod.ChineseParents.EventControlLib.EventControl.BlockAnniversaryEvent(System.Func{System.Int32,System.Boolean},System.Action{System.Int32})">
+            <summary>
+            阻断周年纪念日事件
+            </summary>
+            <param name="condition">符合这个条件的周年纪念日将会被移除</param>
+            <param name="after">这个事件成功移除后执行的方法</param>
+        </member>
+        <member name="M:MtC.Mod.ChineseParents.EventControlLib.EventControl.RemoveBlockAnniversaryEvent(MtC.Mod.ChineseParents.EventControlLib.EventControl.AnniversaryEventControlParam)">
+            <summary>
+            取消阻断周年纪念日事件
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.EventControl.BoyLovingEventControlParam">
+            <summary>
+            添加或移除男生找女儿约会事件使用的参数
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventControl.BoyLovingEventControlParam.boyId">
+            <summary>
+            男同学 ID
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventControl.BoyLovingEventControlParam.eventId">
+            <summary>
+            事件 ID
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventControl.BoyLovingEventControlParam.condition">
+            <summary>
+            条件
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventControl.BoyLovingEventControlParam.after">
+            <summary>
+            成功添加或移除事件后调用的方法
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventControl.addBoyLovingEvents">
+            <summary>
+            添加的男生找女儿约会事件列表
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventControl.blockBoyLovingEvents">
+            <summary>
+            阻断的男生找女儿约会事件列表
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MtC.Mod.ChineseParents.EventControlLib.EventControl.AddBoyLovingEvent(System.Int32,System.Int32,System.Func{System.Int32,System.Int32,System.Boolean},System.Action{System.Int32,System.Int32})" -->
+        <member name="M:MtC.Mod.ChineseParents.EventControlLib.EventControl.RemoveAddBoyLovingEvent(MtC.Mod.ChineseParents.EventControlLib.EventControl.BoyLovingEventControlParam)">
+            <summary>
+            取消添加男生找女儿约会事件
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MtC.Mod.ChineseParents.EventControlLib.EventControl.BlockBoyLovingEvent(System.Func{System.Int32,System.Int32,System.Boolean},System.Action{System.Int32,System.Int32})">
+            <summary>
+            阻断男生找女儿约会事件
+            </summary>
+            <param name="condition">符合这个条件的男生找女儿约会将会被移除</param>
+            <param name="after">这个事件成功移除后执行的方法</param>
+        </member>
+        <member name="M:MtC.Mod.ChineseParents.EventControlLib.EventControl.RemoveBlockBoyLovingEvent(MtC.Mod.ChineseParents.EventControlLib.EventControl.BoyLovingEventControlParam)">
+            <summary>
+            取消阻断男生找女儿约会事件
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MtC.Mod.ChineseParents.EventControlLib.EventControl.RemoveLastEvent">
+            <summary>
+            移除事件列表中最后一个事件，也就是最新添加的事件
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.EventControl.ChatEventControlParam">
+            <summary>
+            添加或移除仅进行对话事件使用的参数
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventControl.ChatEventControlParam.id">
+            <summary>
+            对话 ID
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventControl.ChatEventControlParam.condition">
+            <summary>
+            条件
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventControl.ChatEventControlParam.after">
+            <summary>
+            成功添加或移除事件后调用的方法
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventControl.addChatEvents">
+            <summary>
+            添加的仅进行对话事件列表
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventControl.blockChatEvents">
+            <summary>
+            阻断的仅进行对话事件列表
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MtC.Mod.ChineseParents.EventControlLib.EventControl.AddChatEvent(System.Int32,System.Func{System.Int32,System.Boolean},System.Action{System.Int32})" -->
+        <member name="M:MtC.Mod.ChineseParents.EventControlLib.EventControl.RemoveAddChatEvent(MtC.Mod.ChineseParents.EventControlLib.EventControl.ChatEventControlParam)">
+            <summary>
+            取消添加仅进行对话事件
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MtC.Mod.ChineseParents.EventControlLib.EventControl.BlockChatEvent(System.Func{System.Int32,System.Boolean},System.Action{System.Int32})">
+            <summary>
+            阻断仅进行对话事件
+            </summary>
+            <param name="condition">符合这个条件的仅进行对话事件将会被移除</param>
+            <param name="after">这个事件成功移除后执行的方法</param>
+        </member>
+        <member name="M:MtC.Mod.ChineseParents.EventControlLib.EventControl.RemoveBlockChatEvent(MtC.Mod.ChineseParents.EventControlLib.EventControl.ChatEventControlParam)">
+            <summary>
+            取消阻断仅进行对话事件
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.action_manager_AddAnniversaryButton">
+            <summary>
+            添加周年纪念日事件的方法
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.AnniversaryManager_CheckCondition">
+            <summary>
+            调用添加周年纪念日事件方法的方法
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.action_manager_AddBoyEventButton">
+            <summary>
+            添加男生找女主约会事件的方法
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.BoysManager_OnEndRound">
+            <summary>
+            调用添加男生找女主约会事件方法的方法
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.Settings">
+            <summary>
+            这个 Mod 的设置
+            </summary>
+        </member>
+        <member name="P:MtC.Mod.ChineseParents.EventControlLib.Main.ModEntry">
+            <summary>
+            Mod 对象
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.Main.enabled">
+            <summary>
+            这个 Mod 是否启动
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.Main.settings">
+            <summary>
+            这个 Mod 的设置
+            </summary>
+        </member>
+        <member name="M:MtC.Mod.ChineseParents.EventControlLib.Main.OnToggle(UnityModManagerNet.UnityModManager.ModEntry,System.Boolean)">
+            <summary>
+            Mod Manager 对 Mod 进行控制的时候会调用这个方法
+            </summary>
+            <param name="modEntry"></param>
+            <param name="value">这个 Mod 是否激活</param>
+            <returns></returns>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.Events.action_manager_add_button_candidate">
+            <summary>
+            添加选班委事件的方法
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.Events.action_manager_add_button_question">
+            <summary>
+            添加抉择事件的方法
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.Events.action_manager_add_button_career">
+            <summary>
+            添加选择职业事件的方法
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.Events.action_manager_add_button_Composition">
+            <summary>
+            添加作文大赛事件的方法
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.Events.action_manager_add_button_starshow">
+            <summary>
+            添加选秀事件的方法
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.Events.action_manager_add_button_facefight">
+            <summary>
+            添加面子对决事件的方法
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.Events.action_manager_add_button_message">
+            <summary>
+            看名字是一个发出信息的事件，但是尝试遍历数据后发现这个方法在原逻辑中是调用不到的，怀疑这是个曾经有用或设计预留的废方法
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.Events.action_manager_add_button_name">
+            <summary>
+            添加起名字事件的方法
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.Events.action_manager_add_button_fathertask">
+            <summary>
+            添加基于上一代职业添加职业期望的事件的方法
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.Events.action_manager_add_button_flower">
+            <summary>
+            添加幼儿园的小红花事件的方法
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.Events.action_manager_AddButttonRedPacket">
+            <summary>
+            添加红包事件的方法
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.Events.action_manager_add_button_score">
+            <summary>
+            添加考试分数事件的方法
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.action_manager_add_button_comedy">
+            <summary>
+            添加仅发出对话的事件的方法。好感度事件、学习技能后的事件、转学事件都是从这里发出的
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.comedy_manager_week_end">
+            <summary>
+            添加一般的仅对话事件的方法
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.XmlDataExtension">
+            <summary>
+            <see cref="T:XmlData"/> 的扩展方法类
+            </summary>
+        </member>
+        <member name="M:MtC.Mod.ChineseParents.EventControlLib.XmlDataExtension.Log(XmlData)">
+            <summary>
+            输出所有内容到 Log
+            </summary>
+            <param name="data"></param>
+        </member>
+    </members>
+</doc>
