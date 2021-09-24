@@ -117,3 +117,5 @@ D:\Projects\Unity-Mod-Manager-Mod\Chinese-Parents\Chinese-Parents-Event-Control-
 D:\Projects\Unity-Mod-Manager-Mod\Chinese-Parents\Chinese-Parents-Event-Control-Lib\Event-Control-Lib-Sources\obj\Debug\Event-Control-Lib.csproj.CopyComplete
 D:\Projects\Unity-Mod-Manager-Mod\Chinese-Parents\Chinese-Parents-Event-Control-Lib\Event-Control-Lib-Sources\obj\Debug\Event-Control-Lib.dll
 D:\Projects\Unity-Mod-Manager-Mod\Chinese-Parents\Chinese-Parents-Event-Control-Lib\Event-Control-Lib-Sources\obj\Debug\Event-Control-Lib.pdb
+D:\Projects\Unity-Mod-Manager-Mod\Chinese-Parents\Chinese-Parents-Event-Control-Lib\Event-Control-Lib-Sources\bin\Debug\Event-Control-Lib.xml
+D:\Projects\Unity-Mod-Manager-Mod\Chinese-Parents\Chinese-Parents-Event-Control-Lib\Event-Control-Lib-Sources\obj\Debug\Event-Control-Lib.csprojAssemblyReference.cache
