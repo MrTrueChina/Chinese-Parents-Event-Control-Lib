@@ -203,7 +203,7 @@
         </member>
         <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventControl.ChatEventControlParam.id">
             <summary>
-            对话 ID
+            仅对话事件 ID，一般这个 ID 和对应的对话的 ID 相同
             </summary>
         </member>
         <member name="F:MtC.Mod.ChineseParents.EventControlLib.EventControl.ChatEventControlParam.condition">
@@ -226,7 +226,15 @@
             阻断的仅进行对话事件列表
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:MtC.Mod.ChineseParents.EventControlLib.EventControl.AddChatEvent(System.Int32,System.Func{System.Int32,System.Boolean},System.Action{System.Int32})" -->
+        <member name="M:MtC.Mod.ChineseParents.EventControlLib.EventControl.AddChatEvent(System.Int32,System.Func{System.Int32,System.Boolean},System.Action{System.Int32})">
+            <summary>
+            添加仅进行对话事件
+            </summary>
+            <param name="id">对话 ID</param>
+            <param name="condition">传入事件 id，如果返回 true 则添加对话事件，否则不添加</param>
+            <param name="after">这个事件成功添加后执行的方法</param>
+            <returns></returns>
+        </member>
         <member name="M:MtC.Mod.ChineseParents.EventControlLib.EventControl.RemoveAddChatEvent(MtC.Mod.ChineseParents.EventControlLib.EventControl.ChatEventControlParam)">
             <summary>
             取消添加仅进行对话事件
@@ -364,6 +372,16 @@
         <member name="T:MtC.Mod.ChineseParents.EventControlLib.comedy_manager_week_end">
             <summary>
             添加一般的仅对话事件的方法
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.ReadXml_GetData">
+            <summary>
+            读取数据方法。仅对话事件的数据从这个方法获取，考虑到可能的新添加事件需要在这里对原版没有的事件进行处理
+            </summary>
+        </member>
+        <member name="T:MtC.Mod.ChineseParents.EventControlLib.ReadXml_GetData.GetDataParam">
+            <summary>
+            在前后缀之间传递 GetData 方法参数的类
             </summary>
         </member>
         <member name="T:MtC.Mod.ChineseParents.EventControlLib.XmlDataExtension">

@@ -14,7 +14,7 @@ namespace MtC.Mod.ChineseParents.EventControlLib
         public class ChatEventControlParam
         {
             /// <summary>
-            /// 对话 ID
+            /// 仅对话事件 ID，一般这个 ID 和对应的对话的 ID 相同
             /// </summary>
             public int id;
             /// <summary>
@@ -42,12 +42,12 @@ namespace MtC.Mod.ChineseParents.EventControlLib
         /// 阻断的仅进行对话事件列表
         /// </summary>
         internal static List<ChatEventControlParam> blockChatEvents = new List<ChatEventControlParam>();
-
+        
         /// <summary>
         /// 添加仅进行对话事件
         /// </summary>
         /// <param name="id">对话 ID</param>
-        /// <param name="condition"><boyId, eventId>符合这个条件则添加</param>
+        /// <param name="condition">传入事件 id，如果返回 true 则添加对话事件，否则不添加</param>
         /// <param name="after">这个事件成功添加后执行的方法</param>
         /// <returns></returns>
         public static ChatEventControlParam AddChatEvent(int id, Func<int, bool> condition, Action<int> after)
@@ -182,6 +182,68 @@ namespace MtC.Mod.ChineseParents.EventControlLib
                     addEvent.after.Invoke(addEvent.id);
                 }
             });
+        }
+    }
+
+    /// <summary>
+    /// 读取数据方法。仅对话事件的数据从这个方法获取，考虑到可能的新添加事件需要在这里对原版没有的事件进行处理
+    /// </summary>
+    [HarmonyPatch(typeof(ReadXml), "GetData")]
+    public static class ReadXml_GetData
+    {
+        /// <summary>
+        /// 在前后缀之间传递 GetData 方法参数的类
+        /// </summary>
+        private class GetDataParam
+        {
+            public string fileName;
+            public int id;
+
+            public GetDataParam(string fileName, int id)
+            {
+                this.fileName = fileName;
+                this.id = id;
+            }
+        }
+
+        private static void Prefix(out GetDataParam __state, string fileName, ref int id)
+        {
+            // 将参数传给后缀，这是因为这个方法有可能在内部改变参数
+            __state = new GetDataParam(fileName, id);
+
+            // 如果 Mod 未启动则不作处理
+            if (!Main.enabled)
+            {
+                return;
+            }
+
+            // 如果要获取的是仅对话事件数据 并且 没有要获取的 id 的仅对话事件，那么这个事件就是新添加的事件，将 id 替换为默认事件 id
+            if ("comedy".Equals(__state.fileName) && !ReadXml.HaveData(__state.fileName, __state.id))
+            {
+                id = 8100107;
+                return;
+            }
+        }
+
+        private static void Postfix(GetDataParam __state, ref XmlData __result)
+        {
+            // 如果 Mod 未启动则不作处理
+            if (!Main.enabled)
+            {
+                return;
+            }
+
+            // 如果要获取的不是仅对话事件数据则不处理
+            if (!"comedy".Equals(__state.fileName))
+            {
+                return;
+            }
+
+            // 如果本来的参数 id 是获取不到数据的，那么这个事件很可能是原版没有的、由 Mod 添加的事件，用参数 id 替换掉获取到的 id
+            if(!ReadXml.HaveData(__state.fileName, __state.id))
+            {
+                __result.value["chat_id"] = __state.id + "";
+            }
         }
     }
 }
