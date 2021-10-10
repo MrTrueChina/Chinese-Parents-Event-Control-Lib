@@ -281,6 +281,16 @@
             这个 Mod 的设置
             </summary>
         </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.Settings.showCreateEventTip">
+            <summary>
+            是否在游戏内显示创建事件按钮方法被调用的提示
+            </summary>
+        </member>
+        <member name="F:MtC.Mod.ChineseParents.EventControlLib.Settings.printEventDataToLog">
+            <summary>
+            是否将事件数据输出到 Log
+            </summary>
+        </member>
         <member name="P:MtC.Mod.ChineseParents.EventControlLib.Main.ModEntry">
             <summary>
             Mod 对象
