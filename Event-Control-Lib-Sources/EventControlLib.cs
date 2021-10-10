@@ -13,9 +13,15 @@ namespace MtC.Mod.ChineseParents.EventControlLib
     /// </summary>
     public class Settings : UnityModManager.ModSettings, IDrawable
     {
+        /// <summary>
+        /// 是否在游戏内显示创建事件按钮方法被调用的提示
+        /// </summary>
         [Draw("在游戏内显示创建事件按钮方法被调用的提示 - Show Create Event Button Method Run In Game")]
         public bool showCreateEventTip = false;
 
+        /// <summary>
+        /// 是否将事件数据输出到 Log
+        /// </summary>
         [Draw("将事件数据输出到 Log - Print Event Data To Log")]
         public bool printEventDataToLog = false;
 

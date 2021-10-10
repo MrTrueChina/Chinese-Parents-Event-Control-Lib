@@ -47,38 +47,4 @@ namespace MtC.Mod.ChineseParents.EventControlLib.Events
             }
         }
     }
-
-
-    // 这是遍历随回合数发生的事件的方法，add_button_message 是在 action_open = 2 的时候执行的，但是遍历出的数据里没有 action_open = 2 的
-    //[HarmonyPatch(typeof(week_player), "action_week_start")]
-    //public static class week_player_action_week_start
-    //{
-    //    private static void Postfix(int id)
-    //    {
-    //        // 如果 Mod 未启动则直接按照游戏原本的逻辑进行调用
-    //        if (!Main.enabled)
-    //        {
-    //            return;
-    //        }
-
-    //        Main.ModEntry.Logger.Log("week_player.action_week_start 调用完毕，id = " + id);
-
-
-    //        for (int i = 0; i < 60; i++)
-    //        {
-    //            if (ReadXml.HaveData("week_data", i))
-    //            {
-    //                Main.ModEntry.Logger.Log("查询第 " + i + " 天的事件数据");
-
-    //                XmlData data = ReadXml.GetData("week_data", i);
-
-    //                data.Log();
-    //            }
-    //            else
-    //            {
-    //                Main.ModEntry.Logger.Log("第 " + i + " 天没有事件数据");
-    //            }
-    //        }
-    //    }
-    //}
 }
